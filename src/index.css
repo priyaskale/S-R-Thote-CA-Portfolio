@@ -1,0 +1,11 @@
+@tailwind base; @tailwind components; @tailwind utilities;
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+body { @apply font-sans text-slate-800 bg-white antialiased; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+
+/* Animations */
+.reveal { opacity: 0; }
+.reveal-in { opacity: 1; animation: fadeUp .7s cubic-bezier(.2,.7,.2,1) backwards; animation-delay: var(--d, 0ms); }
+.hero-in { animation: fadeUp .8s cubic-bezier(.2,.7,.2,1) backwards; animation-delay: var(--d, 0ms); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; } .reveal-in, .hero-in { animation: none; } }
